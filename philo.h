@@ -10,23 +10,25 @@
 
 // typedef struct t_philos
 // {
-// ~~~
+// 
 // }   t_philos;
 
 typedef struct t_data
 {
     int nPhilosophers;
-    int philosohers;
     int tDie;
     int tEat;
     int tSleep;
-    int i;
+    int nOfmeals;
+    long long time;
 }   t_data;
 
-int	ft_atoi(const char *str);
-int ft_isdigit(int c);
+long    ft_atol(const char *str);
+int     ft_isdigit(int c);
 void    ft_putstr(char *s);
+int     argsChecker(char **str, int nOfargs);
 long long	ft_time(void);
+
 
 
 #endif
