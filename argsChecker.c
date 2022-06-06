@@ -1,6 +1,11 @@
 #include "philo.h"
 
-int strChecker(char *str)
+static int	ft_isdigit(int c)
+{
+	return (c >= 48 && c <= 57);
+}
+
+static int strChecker(char *str)
 {
     int i;
     long arg;

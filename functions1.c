@@ -25,42 +25,50 @@ long	ft_atol(const char *str)
 	return (number * signe);
 }
 
-int	ft_isdigit(int c)
-{
-	return (c >= 48 && c <= 57);
-}
-
 void	ft_putstr(char *s)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	if (s != NULL)
 	{
-		while (s[i])
-		{
+		while (s[++i])
 			write(1, &s[i], 1);
-			i++;
-		}
 	}
 }
 
-// long long	ft_time(void)
-// {
-// 	struct timeval	pTime;
-// 	long long		timestamp;
+long	execTime(void)
+{
+	struct	timeval time;
+	long	timeReturn;
 
-// 	gettimeofday(&pTime, NULL);
-// 	timestamp = pTime.tv_sec * 1000;
-// 	timestamp += pTime.tv_usec / 1000;
-// 	return (timestamp);
-// }
+	gettimeofday(&time, NULL);
+	timeReturn = time.tv_sec * 1000;
+	timeReturn += time.tv_usec / 1000;
+	return (timeReturn);
+}
 
-// void	ft_usleep(int time)
-// {
-// 	long long	breakTime;
 
-// 	breakTime = ft_time() + time;
-// 	while (ft_time() < breakTime)
-// 		usleep(50);
-// }
+void	ft_usleep(int time)
+{
+	long long	stop_time;
+
+	stop_time = execTime() + time;
+	while (execTime() < stop_time)
+		usleep(50);
+	return ;
+}
+
+void	freeAlloc(t_data *var, int tmp)
+{
+	int	i;
+
+	i = -1;
+	if (tmp == 1)
+	{
+		while (++i < var->nPhilos)
+			pthread_mutex_destroy(&(var->fkTab[i]));
+	}
+	free(var->fkTab);
+	free(var->phTab);
+}

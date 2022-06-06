@@ -8,27 +8,44 @@
 # include <pthread.h>
 # include <sys/time.h>
 
-// typedef struct t_philos
-// {
-// 
-// }   t_philos;
 
-typedef struct t_data
+
+typedef struct s_philo
 {
-    int nPhilosophers;
-    int tDie;
-    int tEat;
-    int tSleep;
-    int nOfmeals;
-    long long time;
+	pthread_t			thread;
+	int					id;
+	long				tLastMeal;
+	int					lFork;
+	int					rFork;
+	struct s_data		*infos;
+}	t_philo;
+
+typedef struct s_data
+{
+	int				args;
+	int				nPhilos;
+	int				tDie;
+	int				tEat;
+	int				tSleep;
+	int				nMeals;
+	int				lastVar;
+	long		    startTime;
+	pthread_mutex_t *fkTab;
+	pthread_mutex_t logs;
+	struct s_philo	*phTab;
 }   t_data;
 
+
+
 long    ft_atol(const char *str);
-int     ft_isdigit(int c);
 void    ft_putstr(char *s);
-int     argsChecker(char **str, int nOfargs);
-long long	ft_time(void);
-
-
-
+int		argsChecker(char **str, int nOfargs);
+long    execTime(void);
+void	ft_usleep(int time);
+void	initArgs(char **args, t_data *var);
+void	initPhilos(t_data *var);
+void	initMutex(t_data *var);
+void	checkDeath(t_data *var);
+void	threadCreat(t_data *var);
+void	freeAlloc(t_data *var, int tmp);
 #endif

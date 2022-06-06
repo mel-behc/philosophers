@@ -2,7 +2,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -pthread 
 NAME = philo
 HEADER = philo.h
-SRC = philo.c functions1.c argsChecker.c
+SRC = main.c argsChecker.c functions1.c functions2.c  
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
