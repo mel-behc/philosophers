@@ -42,6 +42,8 @@ int	args_checker(char **str, int n_of_args)
 	int	i;
 
 	i = 0;
+	if (n_of_args < 4 || n_of_args > 5)
+		return (0);
 	while (i < n_of_args)
 	{
 		if (!str_checker(str[i]))

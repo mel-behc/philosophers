@@ -67,11 +67,12 @@ int	main(int ac, char **av)
 {
 	t_data	var;
 
-	if (ac == 1)
-		return (0);
 	var.args = ac - 1;
 	if (!args_checker(&av[1], var.args))
+	{
 		ft_putstr("Wrong args\n");
+		return (0);
+	}
 	init_args(av, &var);
 	init_philos(&var);
 	thread_creat(&var, var.args);
