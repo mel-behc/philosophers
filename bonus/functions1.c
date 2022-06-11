@@ -6,7 +6,7 @@
 /*   By: melbehchach <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 03:31:20 by melbehchach       #+#    #+#             */
-/*   Updated: 2022/06/08 03:31:21 by melbehchach      ###   ########.fr       */
+/*   Updated: 2022/06/11 18:29:49 by melbehchach      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long	ft_atol(const char *str)
 {
-	int		i;
+	int	i;
 	long	number;
-	int		signe;
+	int	signe;
 
 	i = 0;
 	number = 0;
@@ -49,7 +49,7 @@ void	ft_putstr(char *s)
 	}
 }
 
-long	execTime(void)
+long	exec_time(void)
 {
 	struct	timeval time;
 	long	timeReturn;
@@ -63,26 +63,17 @@ long	execTime(void)
 
 void	ft_usleep(int time)
 {
-	long long	stop_time;
+	long	stop_time;
 
-	stop_time = execTime() + time;
-	while (execTime() < stop_time)
+	stop_time = exec_time() + time;
+	while (exec_time() < stop_time)
 		usleep(50);
 	return ;
 }
 
+void	free_alloc(t_data *var)
+{
 
-
-// void	freeAlloc(t_data *var, int tmp)
-// {
-// 	int	i;
-
-// 	i = -1;
-// 	if (tmp == 1)
-// 	{
-// 		while (++i < var->nPhilos)
-// 			pthread_mutex_destroy(&(var->fkTab[i]));
-// 	}
-// 	free(var->fkTab);
-// 	free(var->phTab);
-// }
+	free(var->ph_tab);
+	free(var->pid_tab);
+}

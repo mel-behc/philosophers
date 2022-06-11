@@ -6,7 +6,7 @@
 /*   By: melbehchach <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 03:30:41 by melbehchach       #+#    #+#             */
-/*   Updated: 2022/06/08 03:30:43 by melbehchach      ###   ########.fr       */
+/*   Updated: 2022/06/11 18:36:49 by melbehchach      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long	ft_atol(const char *str)
 {
-	int		i;
+	int	i;
 	long	number;
-	int		signe;
+	int	signe;
 
 	i = 0;
 	number = 0;
@@ -49,10 +49,10 @@ void	ft_putstr(char *s)
 	}
 }
 
-long	execTime(void)
+long	exec_time(void)
 {
-	struct	timeval time;
-	long	timeReturn;
+	struct timeval	time;
+	long		timeReturn;
 
 	gettimeofday(&time, NULL);
 	timeReturn = time.tv_sec * 1000;
@@ -63,24 +63,24 @@ long	execTime(void)
 
 void	ft_usleep(int time)
 {
-	long long	stop_time;
+	long	stop_time;
 
-	stop_time = execTime() + time;
-	while (execTime() < stop_time)
+	stop_time = exec_time() + time;
+	while (exec_time() < stop_time)
 		usleep(50);
 	return ;
 }
 
-void	freeAlloc(t_data *var, int tmp)
+void	free_alloc(t_data *var, int tmp)
 {
 	int	i;
 
 	i = -1;
 	if (tmp == 1)
 	{
-		while (++i < var->nPhilos)
-			pthread_mutex_destroy(&(var->fkTab[i]));
+		while (++i < var->n_philos)
+			pthread_mutex_destroy(&(var->fk_tab[i]));
 	}
-	free(var->fkTab);
-	free(var->phTab);
+	free(var->fk_tab);
+	free(var->ph_tab);
 }

@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/melbehchach/Desktop/philosophers/mandatory'
+cc -Wall -Werror -Wextra -pthread  -c main.c -o main.o -I philo.h
+cc -Wall -Werror -Wextra -pthread  -c argsChecker.c -o argsChecker.o -I philo.h
+cc -Wall -Werror -Wextra -pthread  -c functions1.c -o functions1.o -I philo.h
+cc -Wall -Werror -Wextra -pthread  -c functions2.c -o functions2.o -I philo.h
+cc main.o argsChecker.o functions1.o functions2.o -o philo
+make: Leaving directory `/Users/melbehchach/Desktop/philosophers/mandatory'
+ 

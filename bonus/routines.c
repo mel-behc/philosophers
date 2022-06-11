@@ -12,10 +12,10 @@
 
 #include "philo.h"
 
-static void printLogs(t_data *var, char *log, int philoId)
+static void print_logs(t_data *var, char *log, int philo_id)
 {
 	sem_wait(var->logs);
-	printf("%ld %d %s\n", (execTime() - var->startTime), philoId, log);
+	printf("%ld %d %s\n", (exec_time() - var->start_time), philo_id, log);
 	sem_post(var->logs);
 	
 }
@@ -29,19 +29,19 @@ void *routine_1(t_philo *philo)
 		ft_usleep(100);
 	while (1)
 	{
-		sem_wait(var->fkTab);
-		printLogs(var, "has taken a fork", philo->id + 1);
-		sem_wait(var->fkTab);
-		printLogs(var, "has taken a fork", philo->id + 1);
-		printLogs(var, "is eating", philo->id + 1);
-		philo->tLastMeal = execTime();
-		ft_usleep(var->tEat);
-		sem_post(var->fkTab);
-		sem_post(var->fkTab);
-		var->lastVar++;
-		printLogs(var, "is sleeping", philo->id + 1);
-		ft_usleep(var->tSleep);
-		printLogs(var, "is thinking", philo->id + 1);
+		sem_wait(var->fk_tab);
+		print_logs(var, "has taken a fork", philo->id + 1);
+		sem_wait(var->fk_tab);
+		print_logs(var, "has taken a fork", philo->id + 1);
+		print_logs(var, "is eating", philo->id + 1);
+		philo->t_last_meal = exec_time();
+		ft_usleep(var->t_eat);
+		sem_post(var->fk_tab);
+		sem_post(var->fk_tab);
+		var->last_var++;
+		print_logs(var, "is sleeping", philo->id + 1);
+		ft_usleep(var->t_sleep);
+		print_logs(var, "is thinking", philo->id + 1);
 	}
     return (NULL);
 }
@@ -55,22 +55,21 @@ void *routine_2(t_philo *philo)
 	if (philo->id % 2)
 		ft_usleep(100);
     i = -1;
-    // printf("***********%d***********\n", var->lastVar);
-	while (++i < var->nMeals)
+	while (++i < var->n_meals)
 	{
-		sem_wait(var->fkTab);
-		printLogs(var, "has taken a fork", philo->id + 1);
-		sem_wait(var->fkTab);
-		printLogs(var, "has taken a fork", philo->id + 1);
-		printLogs(var, "is eating", philo->id + 1);
-		philo->tLastMeal = execTime();
-		ft_usleep(var->tEat);
-		sem_post(var->fkTab);
-		sem_post(var->fkTab);
-		var->lastVar++;
-		printLogs(var, "is sleeping", philo->id + 1);
-		ft_usleep(var->tSleep);
-		printLogs(var, "is thinking", philo->id + 1);
+		sem_wait(var->fk_tab);
+		print_logs(var, "has taken a fork", philo->id + 1);
+		sem_wait(var->fk_tab);
+		print_logs(var, "has taken a fork", philo->id + 1);
+		print_logs(var, "is eating", philo->id + 1);
+		philo->t_last_meal = exec_time();
+		ft_usleep(var->t_eat);
+		sem_post(var->fk_tab);
+		sem_post(var->fk_tab);
+		var->last_var++;
+		print_logs(var, "is sleeping", philo->id + 1);
+		ft_usleep(var->t_sleep);
+		print_logs(var, "is thinking", philo->id + 1);
 	}
     return (NULL);
 }

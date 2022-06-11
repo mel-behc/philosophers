@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/melbehchach/Desktop/philosophers'
+make: Leaving directory `/Users/melbehchach/Desktop/philosophers'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
