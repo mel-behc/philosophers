@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -pthread 
-NAME = philo_b
+NAME = philo_bonus
 HEADER_B = philo.h
 SRC_B = main.c \
 			argsChecker.c \

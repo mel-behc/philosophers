@@ -24,33 +24,33 @@
 
 typedef struct s_philo
 {
-	pthread_t	thread;
-	int		id;
-	long		t_last_meal;
-	int		l_fork;
-	int		r_fork;
+	pthread_t		thread;
+	int				id;
+	long			t_last_meal;
+	int				l_fork;
+	int				r_fork;
 	struct s_data	*infos;
 }	t_philo;
 
 typedef struct s_data
 {
-	int		args;
-	int		n_philos;
-	int		t_die;
-	int		t_eat;
-	int		t_sleep;
-	int		n_meals;
-	int		last_var;
-	long		start_time;
-	sem_t		*fk_tab;
-	sem_t		*logs;
-	int		*pid_tab;
+	int				args;
+	int				n_philos;
+	int				t_die;
+	int				t_eat;
+	int				t_sleep;
+	int				n_meals;
+	int				last_var;
+	long			start_time;
+	sem_t			*fk_tab;
+	sem_t			*logs;
+	int				*pid_tab;
 	struct s_philo	*ph_tab;
-}   t_data;
+}	t_data;
 
 long	ft_atol(const char *str);
 void	ft_putstr(char *s);
-int	args_checker(char **str, int nOfargs);
+int		args_checker(char **str, int nOfargs);
 long	exec_time(void);
 void	ft_usleep(int time);
 void	init_args(char **args, t_data *var);

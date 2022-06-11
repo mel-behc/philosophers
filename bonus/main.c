@@ -15,13 +15,14 @@
 static int	fork_process(t_data *var, int last_arg)
 {
 	static int	i;
-	int		pid;
+	int			pid;
 
 	pid = fork();
 	if (!pid)
 	{
 		var->ph_tab[i].t_last_meal = exec_time();
-		if(pthread_create(&(var->ph_tab[i].thread), NULL, &check_death, &var->ph_tab[i]))
+		if (pthread_create(&(var->ph_tab[i].thread), \
+					NULL, &check_death, &var->ph_tab[i]))
 			exit(0);
 		if (last_arg == 4)
 			routine_1(&var->ph_tab[i]);
@@ -67,7 +68,7 @@ int	main(int ac, char **av)
 	t_data	var;
 
 	if (ac == 1)
-		return 0;
+		return (0);
 	var.args = ac - 1;
 	if (!args_checker(&av[1], var.args))
 		ft_putstr("Wrong args\n");

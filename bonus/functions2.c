@@ -36,6 +36,7 @@ void	init_sem(t_data *var)
 	var->fk_tab = sem_open("forks", O_CREAT, S_IRWXU, var->n_philos);
 	var->logs = sem_open("logs", O_CREAT, S_IRWXU, 1);
 }
+
 void	init_philos(t_data *var)
 {
 	int	i;
@@ -51,7 +52,6 @@ void	init_philos(t_data *var)
 	init_sem(var);
 }
 
-
 void	*check_death(void *args)
 {
 	t_philo	*philos;
@@ -64,7 +64,8 @@ void	*check_death(void *args)
 		if ((exec_time() - philos->t_last_meal) > var->t_die)
 		{
 			sem_wait(var->logs);
-			printf("%ld %d died\n", (exec_time() - var->start_time), (philos->id + 1));
+			printf("%ld %d died\n", exec_time() - var->start_time, \
+					philos->id + 1);
 			exit(1);
 		}
 		usleep(50);

@@ -14,9 +14,9 @@
 
 long	ft_atol(const char *str)
 {
-	int	i;
+	int		i;
 	long	number;
-	int	signe;
+	int		signe;
 
 	i = 0;
 	number = 0;
@@ -52,14 +52,13 @@ void	ft_putstr(char *s)
 long	exec_time(void)
 {
 	struct timeval	time;
-	long		timeReturn;
+	long			time_return;
 
 	gettimeofday(&time, NULL);
-	timeReturn = time.tv_sec * 1000;
-	timeReturn += time.tv_usec / 1000;
-	return (timeReturn);
+	time_return = time.tv_sec * 1000;
+	time_return += time.tv_usec / 1000;
+	return (time_return);
 }
-
 
 void	ft_usleep(int time)
 {

@@ -26,7 +26,7 @@ void	init_args(char **args, t_data *var)
 		return ;
 	var->fk_tab = malloc(sizeof(pthread_mutex_t) * var->n_philos);
 	if (!var->fk_tab)
-		return ;	
+		return ;
 }
 
 void	init_mutex(t_data *var)
@@ -57,7 +57,7 @@ void	init_philos(t_data *var)
 static int	check_last_arg(t_data *var)
 {
 	if (!(var->last_var >= (var->n_meals * var->n_philos)))
-		return 0;
+		return (0);
 	return (1);
 }
 
@@ -74,15 +74,15 @@ void	check_death(t_data *var)
 			{
 				if (check_last_arg(var))
 				{
-					pthread_mutex_lock(&var->logs);	
+					pthread_mutex_lock(&var->logs);
 					return ;
 				}	
-
 			}
 			if ((exec_time() - var->ph_tab[i].t_last_meal) > var->t_die)
 			{
 				pthread_mutex_lock(&var->logs);
-				printf("%ld %d died\n", (exec_time() - var->start_time), var->ph_tab[i].id + 1);
+				printf("%ld %d died\n", exec_time() - var->start_time, \
+						var->ph_tab[i].id + 1);
 				return ;
 			}
 			usleep(50);
