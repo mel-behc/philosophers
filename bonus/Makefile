@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -pthread 
-BONUS = philo_b
-HEADER_B = ./bonus/philo.h
+NAME = philo_b
+HEADER_B = philo.h
 SRC_B = main.c \
 			argsChecker.c \
 			functions1.c \
@@ -9,10 +9,10 @@ SRC_B = main.c \
 			routines.c
 OBJ_B = $(SRC_B:.c=.o)
 
-all: $(BONUS)
+all: $(NAME)
 
-$(BONUS): $(OBJ_B)
-	@$(CC) $(OBJ_B) -o $(BONUS)
+$(NAME): $(OBJ_B)
+	@$(CC) $(OBJ_B) -o $(NAME)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_B)
@@ -21,6 +21,6 @@ clean:
 	@rm -rf $(OBJ_B)
 
 fclean: clean
-	@rm -rf $(BONUS)
+	@rm -rf $(NAME)
 
 re: fclean all

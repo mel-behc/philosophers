@@ -55,7 +55,7 @@ void	init_philos(t_data *var)
 void	*check_death(void *args)
 {
 	t_philo	*philos;
-	t_dat	*var;
+	t_data	*var;
 
 	philos = (t_philo *)args;
 	var = philos->infos;

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sat Jun 11 18:02:38 2022
+# Make data base, printed on Sat Jun 11 18:46:44 2022
 
 # Variables
 
@@ -40,13 +40,12 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 _ = /usr/bin/make
 # makefile
 MAKEFILE_LIST := 
- 
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/w8/nhrk6w812ksgxppn11v4fk0h0000gn/T/vscode-ipc-cce23575-9d28-4825-a22f-1459722d27e7.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/w8/nhrk6w812ksgxppn11v4fk0h0000gn/T/vscode-ipc-d1c50688-f18e-4fc7-8ea9-dda8b3d61393.sock
 # environment
 VSCODE_CWD = /Users/melbehchach/Desktop/philosophers
 # environment
@@ -78,7 +77,7 @@ MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/melbehchach/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/melbehchach/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 LOGNAME = melbehchach
 # environment
@@ -108,7 +107,7 @@ USER = melbehchach
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:8030E5FC-D8E4-4C23-8046-6031DD22FA2F
+TERM_SESSION_ID = w0t0p0:ACA59094-0DA2-4F9C-BC8B-AD3200224501
 # environment
 LESS = -R
 # automatic
@@ -124,7 +123,7 @@ TMPDIR = /var/folders/w8/nhrk6w812ksgxppn11v4fk0h0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/melbehchach/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/melbehchach/Library/Application Support/Code/1.68.0-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -134,7 +133,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.8727851.8727857.9EF72831-EE13-44AD-8814-351EF09F1F2A
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.11302347.11302353.6FE5BFAD-3E48-4DEB-955C-EB1318ADE7EC
 # environment
 LC_TERMINAL_VERSION = 3.4.15
 # automatic
@@ -142,7 +141,7 @@ LC_TERMINAL_VERSION = 3.4.15
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:8030E5FC-D8E4-4C23-8046-6031DD22FA2F
+ITERM_SESSION_ID = w0t0p0:ACA59094-0DA2-4F9C-BC8B-AD3200224501
 # environment
 COLORFGBG = 15;0
 # environment
@@ -163,7 +162,6 @@ LC_ALL = C
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
- 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -173,7 +171,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 10906
+VSCODE_PID = 15489
 # variable set hash-table stats:
 # Load=79/1024=8%, Rehash=0, Collisions=4/100=4%
 
@@ -235,6 +233,7 @@ makefile:
 #  File has not been updated.
 
 # Not a target:
+ 
 GNUmakefile:
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
@@ -257,6 +256,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sat Jun 11 18:02:38 2022
+# Finished Make data base on Sat Jun 11 18:46:44 2022
 
  
